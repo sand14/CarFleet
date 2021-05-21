@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CarFleet:jar">
+    <output-path>$PROJECT_DIR$/CarFleet_jar</output-path>
+    <root id="archive" name="CarFleet.jar">
+      <element id="module-output" name="CarFleet" />
+    </root>
+  </artifact>
+</component>
