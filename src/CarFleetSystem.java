@@ -39,6 +39,7 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		addComponentListener(this);
 
 		setSize(1000, 1000);
+		setLocationRelativeTo(null);
 
 		Container c = getContentPane();
 		carCollection = new CarsCollection();
@@ -288,13 +289,6 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		}
 
 		return result;
-	}
-
-	
-	public static void main(String[] args)
-	{
-		CarFleetSystem carFleet = new CarFleetSystem("cars.dat");
-		carFleet.setVisible(true);
 	}
 
 	
