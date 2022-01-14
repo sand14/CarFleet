@@ -38,7 +38,7 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		addWindowListener(closer);
 		addComponentListener(this);
 
-		setSize(1000, 1000);
+		setSize(1300, 1300);
 		setLocationRelativeTo(null);
 
 		Container c = getContentPane();
@@ -90,7 +90,8 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		SearchByOtherPanel searchByOtherPanel = new SearchByOtherPanel(this);
 		SearchByNamePanel searchByNamePanel = new SearchByNamePanel(this);
 		ShowCarsList showCarsList = new ShowCarsList(this);
-		ageChart ageChart = new ageChart(this);
+		kmChart kmChart = new kmChart(this);
+
 
 		theTab.add("Welcome", welcomePanel);
 		theTab.add("Add a Car", addCarPanel);
@@ -99,11 +100,12 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		theTab.add("Search on Distance traveled", searchByOtherPanel);
 		theTab.add("Search by manufacturer", searchByNamePanel);
 		theTab.add("Show list", showCarsList);
-		theTab.add("Age chart", ageChart);
+		theTab.add("KM chart", kmChart);
 
 		theTab.addChangeListener(showCarsList);
 		theTab.addChangeListener(showAllCarsPanel);
 		theTab.addChangeListener(welcomePanel);
+		theTab.addChangeListener(kmChart);
 
 		theTab.setSelectedIndex(0);
 
