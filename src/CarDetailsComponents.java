@@ -100,7 +100,7 @@ public class CarDetailsComponents extends JPanel implements ComponentListener
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = GridBagConstraints.RELATIVE;
-		gridBagConstraints.anchor = gridBagConstraints.WEST;
+		gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
         compPanel.add(kmTextField, gridBagConstraints);
 
@@ -109,7 +109,7 @@ public class CarDetailsComponents extends JPanel implements ComponentListener
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = gridBagConstraints.WEST;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
 		gridBagConstraints.weightx = 1.0;
         compPanel.add(new JScrollPane(infoTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), gridBagConstraints);
 

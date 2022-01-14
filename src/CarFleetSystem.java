@@ -90,6 +90,7 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		SearchByOtherPanel searchByOtherPanel = new SearchByOtherPanel(this);
 		SearchByNamePanel searchByNamePanel = new SearchByNamePanel(this);
 		ShowCarsList showCarsList = new ShowCarsList(this);
+		ageChart ageChart = new ageChart(this);
 
 		theTab.add("Welcome", welcomePanel);
 		theTab.add("Add a Car", addCarPanel);
@@ -98,6 +99,7 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		theTab.add("Search on Distance traveled", searchByOtherPanel);
 		theTab.add("Search by manufacturer", searchByNamePanel);
 		theTab.add("Show list", showCarsList);
+		theTab.add("Age chart", ageChart);
 
 		theTab.addChangeListener(showCarsList);
 		theTab.addChangeListener(showAllCarsPanel);
