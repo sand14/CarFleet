@@ -91,6 +91,7 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		SearchByNamePanel searchByNamePanel = new SearchByNamePanel(this);
 		ShowCarsList showCarsList = new ShowCarsList(this);
 		kmChart kmChart = new kmChart(this);
+		manufacturerChart manufacturerChart = new manufacturerChart(this);
 
 
 		theTab.add("Welcome", welcomePanel);
@@ -101,11 +102,13 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		theTab.add("Search by manufacturer", searchByNamePanel);
 		theTab.add("Show list", showCarsList);
 		theTab.add("KM chart", kmChart);
+		theTab.add("Manufacturer chart", manufacturerChart);
 
 		theTab.addChangeListener(showCarsList);
 		theTab.addChangeListener(showAllCarsPanel);
 		theTab.addChangeListener(welcomePanel);
 		theTab.addChangeListener(kmChart);
+		theTab.addChangeListener(manufacturerChart);
 
 		theTab.setSelectedIndex(0);
 
