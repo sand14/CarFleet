@@ -25,6 +25,7 @@ public class kmChart extends JPanel implements ChangeListener
         carSys.addCarUpdateListener(this);
         headingLabel.setAlignmentX(0.5f);
         setLayout(new BorderLayout());
+        topPanel.setSize(100,100);
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(headingLabel);
 

@@ -1,4 +1,6 @@
 
+import org.jfree.util.StringUtils;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -142,13 +144,15 @@ public class ShowAllCarsPanel extends JPanel implements ActionListener, ChangeLi
 			{
 				String manufacturer;
 				manufacturer = JOptionPane.showInputDialog("Input new manufacturer");
-				carSystem.UpdateManufacturer(carList[currentIndex],manufacturer);
-				carList[currentIndex].setManufacturer(manufacturer);
-				carComponents.displayDetails(carList[currentIndex]);
-				JOptionPane.showMessageDialog(carSystem, "Manufacturer succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
-				f.setVisible(false);
-				carSystem.checkempty();
-				carSystem.setCarsUpdated();
+				if(manufacturer != null) {
+					carSystem.UpdateManufacturer(carList[currentIndex], manufacturer);
+					carList[currentIndex].setManufacturer(manufacturer);
+					carComponents.displayDetails(carList[currentIndex]);
+					JOptionPane.showMessageDialog(carSystem, "Manufacturer succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
+					f.setVisible(false);
+					carSystem.checkempty();
+					carSystem.setCarsUpdated();
+				}
 			}
 		});
 		m2.addActionListener(new ActionListener()
@@ -157,50 +161,76 @@ public class ShowAllCarsPanel extends JPanel implements ActionListener, ChangeLi
 			{
 				String model;
 				model = JOptionPane.showInputDialog("Input new model");
-				carList[currentIndex].setModel(model);
-				carComponents.displayDetails(carList[currentIndex]);
-				JOptionPane.showMessageDialog(carSystem, "Model succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
-				f.setVisible(false);
-				carSystem.setCarsUpdated();
+				if(model != null)
+				{
+					carList[currentIndex].setModel(model);
+					carComponents.displayDetails(carList[currentIndex]);
+					JOptionPane.showMessageDialog(carSystem, "Model succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
+					f.setVisible(false);
+					carSystem.setCarsUpdated();
+				}
 			}
 		});
 		m4.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				int year;
-				year = Integer.parseInt(JOptionPane.showInputDialog("Input new year"));
-				carList[currentIndex].setYear(year);
-				carComponents.displayDetails(carList[currentIndex]);
-				JOptionPane.showMessageDialog(carSystem, "Year succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
-				f.setVisible(false);
-				carSystem.setCarsUpdated();
+				String inputYear = JOptionPane.showInputDialog("Input new year");
+				if(inputYear!=null)
+				{
+					try
+					{
+						int year = Integer.parseInt(inputYear);
+						carList[currentIndex].setYear(year);
+						carComponents.displayDetails(carList[currentIndex]);
+						JOptionPane.showMessageDialog(carSystem, "Year successfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
+						f.setVisible(false);
+						carSystem.setCarsUpdated();
+					}
+					catch (NumberFormatException ex)
+					{
+						JOptionPane.showMessageDialog(carSystem, "Inputted year not valid", "Error", JOptionPane.ERROR_MESSAGE);
+					}
+				}
 			}
 		});
 		m5.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				int kms;
-				kms = Integer.parseInt(JOptionPane.showInputDialog("Input new Kilometers"));
-				carList[currentIndex].setKilometers(kms);
-				carComponents.displayDetails(carList[currentIndex]);
-				JOptionPane.showMessageDialog(carSystem, "Kilometers succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
-				f.setVisible(false);
-				carSystem.setCarsUpdated();
+				String inputKms = JOptionPane.showInputDialog("Input new Kilometers");
+				if(inputKms != null)
+				{
+					try
+					{
+						int kms = Integer.parseInt(inputKms);
+						carList[currentIndex].setKilometers(kms);
+						carComponents.displayDetails(carList[currentIndex]);
+						JOptionPane.showMessageDialog(carSystem, "Kilometers successfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
+						f.setVisible(false);
+						carSystem.setCarsUpdated();
+					}
+					catch (NumberFormatException ex)
+					{
+						JOptionPane.showMessageDialog(carSystem, "Inputted kilometers not valid", "Error", JOptionPane.ERROR_MESSAGE);
+					}
+
+				}
 			}
 		});
 		m3.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				String details;
-				details = JOptionPane.showInputDialog("Input new Details");
-				carList[currentIndex].setInformation(details);
-				carComponents.displayDetails(carList[currentIndex]);
-				JOptionPane.showMessageDialog(carSystem, "Details succesfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
-				f.setVisible(false);
-				carSystem.setCarsUpdated();
+				String details = JOptionPane.showInputDialog("Input new Details");
+				if(details != null)
+				{
+					carList[currentIndex].setInformation(details);
+					carComponents.displayDetails(carList[currentIndex]);
+					JOptionPane.showMessageDialog(carSystem, "Details successfully updated", "Alert", JOptionPane.INFORMATION_MESSAGE);
+					f.setVisible(false);
+					carSystem.setCarsUpdated();
+				}
 			}
 		});
 		m6.addActionListener(new ActionListener()

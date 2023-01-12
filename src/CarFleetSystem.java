@@ -38,7 +38,7 @@ public class CarFleetSystem extends JFrame implements ActionListener, ComponentL
 		addWindowListener(closer);
 		addComponentListener(this);
 
-		setSize(1300, 1300);
+		setSize(Toolkit. getDefaultToolkit(). getScreenSize());
 		setLocationRelativeTo(null);
 
 		Container c = getContentPane();
